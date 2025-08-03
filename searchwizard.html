@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Wizard</title>
+  <style>
+    body {
+      background: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding-top: 50px;
+      color: #333;
+    }
+    #wizard {
+      font-size: 24px;
+      margin-bottom: 20px;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0px); }
+    }
+    #searchBox {
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 2px solid #555;
+      width: 60%;
+      font-size: 16px;
+    }
+    #castBtn {
+      background: #009e60;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      margin-left: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background 0.3s;
+    }
+    #castBtn:hover {
+      background: #007a4c;
+    }
+  </style>
+</head>
+<body>
+  <div id="wizard">🧙‍♂️ “কি জানতে চাও জ্ঞানপিপাসু?”</div>
+  <input id="searchBox" type="text" placeholder="এখানে লেখো..." />
+  <button id="castBtn" onclick="search()">🔍 খুঁজে বের করো</button>
+
+  <script>
+    function search() {
+      var q = document.getElementById("searchBox").value.trim();
+      if (q) {
+        var searchUrl = 'https://www.google.com/search?q=site:https://sites.google.com/pathao.com/pathao‑rental‑knowledge‑bank ' + encodeURIComponent(q);
+        window.open(searchUrl, '_blank');
+      }
+    }
+  </sc
